@@ -1,6 +1,6 @@
 import Button from "../common/Button";
 import ticket from "../../assets/bg.png";
-import barCode from "../../assets/barCode.png";
+import barCode from "../../assets/BarCode.png";
 import { TicketContext } from "../../context/FormContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
