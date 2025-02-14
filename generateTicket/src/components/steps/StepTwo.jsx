@@ -12,9 +12,9 @@ import ProgressBar from "../common/ProgressBar";
 // Yup Validation Schema
 const schema = yup.object().shape({
   name: yup.string()
-  .min(6, "Too Short!")
-  .max(50, "Too Long!")
-  .required("Fullname is required"),
+    .min(6, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Fullname is required"),
   email: yup.string().email("Invalid email").required("Email is required"),
   avatar: yup.string().required("Profile picture is required"),
   request: yup.string().optional(),
@@ -41,7 +41,6 @@ const StepTwo = () => {
         ...prev,  
         ...values, 
       }));
-      
       console.log("Form submitted:", values);
       navigate("/step-three");
     },
@@ -83,12 +82,11 @@ const StepTwo = () => {
 
   return (
     <div className="lg:w-[700px] md:w-[700px] w-[370px] bg-[#041E23] p-4 mx-auto border border-[#0E464F] my-7 rounded-4xl">
-
       {/* Step Header */}
       <StepHeader title="Attendee Details" step="Step 2/3" />
 
-       {/* Progress Bar */}
-       <ProgressBar step={2} totalSteps={3} />
+      {/* Progress Bar */}
+      <ProgressBar step={2} totalSteps={3} />
 
       <form
         onSubmit={formik.handleSubmit}
@@ -102,7 +100,7 @@ const StepTwo = () => {
 
           <label
             htmlFor="profilePicture"
-             tabIndex="0"
+            tabIndex="0"
             className="flex justify-center flex-col gap-2 w-[240px] h-[240px] mt-6 transition outline-4 outline-[#24A0B5] rounded-2xl bg-[#0E464F] mx-auto cursor-pointer relative"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
@@ -132,10 +130,10 @@ const StepTwo = () => {
             id="profilePicture"
             accept="image/*"
             onChange={handleFileUpload}
-             aria-describedby="avatarError"
+            aria-describedby="avatarError"
           />
-          {formik.errors.avatar && (
-            <p  role="alert" tabIndex="-1" className="text-red-500 text-sm text-center mt-2">
+          {formik.errors.avatar && formik.touched.avatar && (
+            <p id="avatarError" className="text-red-500 text-sm text-center mt-2" role="alert" aria-live="assertive">
               {formik.errors.avatar}
             </p>
           )}
@@ -153,18 +151,20 @@ const StepTwo = () => {
             value={formik.values.name}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-             aria-describedby="nameError"
-            className="border border-[#07373F] w-full p-3 rounded-xl mt-2"
+            aria-describedby="nameError"
+            className={`border w-full p-3 rounded-xl mt-2 outline-none ${formik.errors.name && formik.touched.name ? 'border-red-500' : 'border-[#07373F]'}`}
           />
           {formik.errors.name && formik.touched.name && (
-            <p  id="nameError" className="text-red-500 text-sm mt-2" aria-live="assertive">{formik.errors.name}</p>
+            <p id="nameError" className="text-red-500 text-sm mt-2" role="alert" aria-live="assertive">
+              {formik.errors.name}
+            </p>
           )}
         </div>
 
         {/* Email Field */}
         <div>
-          <label htmlFor="email">Enter your email</label>
-          <div className="flex items-center border border-[#07373F] rounded-xl w-full p-3 gap-2 mt-2">
+          <label htmlFor="email">Enter your email *</label>
+          <div className={`flex items-center w-full gap-2 mt-2 pl-3 border rounded-xl ${formik.errors.email && formik.touched.email ? 'border-red-500' : 'border-[#07373F]'}`}>
             <MdOutlineEmail size={24} />
             <input
               type="email"
@@ -174,12 +174,14 @@ const StepTwo = () => {
               value={formik.values.email}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              className="w-full outline-none bg-transparent"
+              className='w-full outline-none bg-transparent rounded-r-xl p-3'
               aria-describedby="emailError"
             />
           </div>
           {formik.errors.email && formik.touched.email && (
-            <p  id="emailError" className="text-red-500 text-sm mt-2" aria-live="assertive">{formik.errors.email}</p>
+            <p id="emailError" className="text-red-500 text-sm mt-2" role="alert" aria-live="assertive">
+              {formik.errors.email}
+            </p>
           )}
         </div>
 
@@ -192,7 +194,7 @@ const StepTwo = () => {
             placeholder="Textarea"
             value={formik.values.request}
             onChange={formik.handleChange}
-            className="border border-[#07373F] w-full p-3 rounded-xl mt-2 h-[127px]"
+            className="border w-full p-3 rounded-xl mt-2 h-[127px]"
           ></textarea>
         </div>
 
