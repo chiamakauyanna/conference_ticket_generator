@@ -17,7 +17,6 @@ const StepThree = () => {
   };
   return (
     <div className="lg:w-[700px] md:w-[700px] w-[370px] bg-[#041E23] p-4 mx-auto border border-[#0E464F] my-7 rounded-4xl text-center">
-
       {/* Step Header */}
       <StepHeader title="Ready" step="Step 3/3" />
 
@@ -34,8 +33,10 @@ const StepThree = () => {
         Check your email for a copy or you can{" "}
         <span className="font-semibold">download</span>
       </p>
+
+      {/* Generated ticket section */}
       <section className="flex justify-center mt-9 relative">
-        <img src={ticket} alt="ticket design" className="" />
+        <img src={ticket} alt="ticket design" className="h-[600px]" />
         <div className="w-[260px] h-[446px] border border-[#24A0B5] flex-col flex justify-center rounded-2xl absolute items-center mt-4 bg-[#031E21] z-10">
           <h2
             className="text-[34px]"
@@ -98,9 +99,9 @@ const StepThree = () => {
           handleClick={handleReBook}
         />
         <Button
-            text="Download Ticket"
-            className="text-gray-100 bg-[#24A0B5]  w-[266px] py-4"
-          />
+          text="Download Ticket"
+          className="text-gray-100 bg-[#24A0B5]  w-[266px] py-4"
+        />
       </div>
     </div>
   );
