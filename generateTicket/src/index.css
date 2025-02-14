@@ -1,0 +1,10 @@
+@import url('//fonts.googleapis.com/earlyaccess/jejumyeongjo.css');
+@import "tailwindcss";
+
+body{
+  background-color: #02191D;
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  color: #fff;
+  font-size: 16px;
+}
