@@ -89,7 +89,7 @@ const StepThree = () => {
           </div>
         </div>{" "}
         <div className="absolute w-[112px] lg:w-[236px] md:w-[236px] h-[68px] z-50 bottom-0 mb-5">
-          <img src={barCode} alt="bar code for ticket" />
+          <img src={barCode} alt="bar code for ticket" className="h-[68px]"/>
         </div>
       </section>
       <div className="mt-8 mb-4 flex justify-center items-center gap-6 lg:flex-row md:flex-row flex-col">
