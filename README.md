@@ -2,7 +2,7 @@
 
 ![Conference Ticket Generator](https://github.com/user-attachments/assets/9c1f3bca-0d82-405f-821f-ae8c217ec8d0)
 
-![Another Image](https://github.com/user-attachments/assets/cf5326c2-9f70-45e5-ad7b-56e8495d9f7d)
+![Image](https://github.com/user-attachments/assets/e25c1b09-9e73-4ae6-a73d-2854f5dfb034)
 
 ## 🚀 About the Project
 The **Conference Ticket Generator** is a React-based web application that allows users to register for a conference and generate a free ticket. It includes a multi-step form with validation, file uploads (Cloudinary), and a smooth user experience.
