@@ -109,11 +109,11 @@ const StepTwo = () => {
               <img
                 src={preview}
                 alt="Profile Preview"
-                className="w-full h-full object-cover rounded-2xl"
+                className="w-full h-full object-cover rounded-3xl"
               />
             )}
             {(hovered || !preview) && (
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black opacity-50 text-white text-center">
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black opacity-50 text-white text-center rounded-3xl">
                 <WiCloudDown size={32} className="mb-2" />
                 <p>
                   {uploading
