@@ -101,7 +101,7 @@ const StepTwo = () => {
           <label
             htmlFor="profilePicture"
             tabIndex="0"
-            className="flex justify-center flex-col gap-2 w-[240px] h-[240px] mt-6 transition outline-4 outline-[#24A0B5] rounded-2xl bg-[#0E464F] mx-auto cursor-pointer relative"
+            className="flex justify-center flex-col gap-2 w-[240px] h-[240px] mt-6 transition outline-4 outline-[#24A0B5] rounded-3xl bg-[#0E464F] mx-auto cursor-pointer relative"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
@@ -194,7 +194,7 @@ const StepTwo = () => {
             placeholder="Textarea"
             value={formik.values.request}
             onChange={formik.handleChange}
-            className="border w-full p-3 rounded-xl mt-2 h-[127px]"
+            className="border w-full p-3 rounded-xl mt-2 h-[127px] border-[#07373F]"
           ></textarea>
         </div>
 
